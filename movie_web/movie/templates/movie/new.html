@@ -1,0 +1,17 @@
+{% extends "movie/base.html" %}
+{% block bodyblock %}
+    <form action="/movies/create/" method="post">
+    {% csrf_token %}
+        <input type="text" name="title">
+        <input type="text" name="title_en">
+        <input type="number" name="audience">
+        <input type="date" name="open_date">
+        <input type="text" name="genre">
+        <input type="text" name="watch_grade">
+        <input type="number" name="score" step="0.01">
+        <input type="text" name="poster_url">
+        <textarea name="description"></textarea>
+        <button name="submit" type="submit" class="btn btn-primary">등록</button>
+    </form>
+  
+{% endblock %}
